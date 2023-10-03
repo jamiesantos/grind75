@@ -15,6 +15,7 @@ public:
     }
     
     void floodFillInstance(vector<vector<int>>& image, int sr, int sc, int color, int scol) {
+	  // Add check that instance matches original color, or else it'll enter an infinite loop
       if (!checkBounds(sr, sc, image) || image[sr][sc] == color || image[sr][sc] != scol) return;
       image[sr][sc] = color;
       floodFillInstance(image, sr-1, sc, color, scol);
